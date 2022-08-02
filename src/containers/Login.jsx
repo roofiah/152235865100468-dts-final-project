@@ -29,49 +29,52 @@ const Login = () => {
                 alt="/"
             />
 
-            <div className="fixed flex flex-row w-full z-50 px-4 py-24">
-                <div className="boxLeftLogin justify-center">
-                    <img src={logo} alt="logo" className='md:ml-8 md:cursor-pointer h-64' />
-                    <div className="boxTextLeft">
-                        <h3>Bingung Mau masak Apa?</h3>
-                        <h4>Disini kalian bisa dengan mudah mencari resep menu favorit keluarga ~_~</h4>
+            <div className="fixed w-full z-50 px-4 py-24 tr-color">
+                <div className="flex flex-row">
+                    <div className="boxLeftLogin justify-center">
+                        <img src={logo} alt="logo" className='imgLogin md:cursor-pointer h-64' />
+                        <div className="boxTextLeft">
+                            <h3>WELCOME to MENUKU</h3>
+                            <h4>Got just the ingredients and instructions for any recipe. just enjoy cooking. Browse through over 1.000.000 tasty recipe ~_~</h4>
+                        </div>
+                    </div>
+                    <div className="containerForm">
+                        <div className="boxRightLogin">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="formLogin"
+                            >
+                                <input
+                                    className="boxInput"
+                                    type="email"
+                                    placeholder="Email"
+                                    autoComplete="email"
+                                    name="email"
+                                />
+                                <input
+                                    className="boxInput"
+                                    type="password"
+                                    placeholder="Password"
+                                    autoComplete="current-password"
+                                    name="password"
+                                />
+                                <button className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 my-3 font-bold">
+                                    Login
+                                </button>
+                                <div className="mt-2 text-xs">
+                                    Don't have an account?{" "}
+                                    <Link
+                                        className="hover:text-red-600 active:text-red-600"
+                                        to="/register"
+                                    >
+                                        Register
+                                    </Link>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div className="containerForm">
-                    <div className="boxRightLogin">
-                        <form
-                            onSubmit={handleSubmit}
-                            className="formLogin"
-                        >
-                            <input
-                                className="boxInput"
-                                type="email"
-                                placeholder="Email"
-                                autoComplete="email"
-                                name="email"
-                            />
-                            <input
-                                className="boxInput"
-                                type="password"
-                                placeholder="Password"
-                                autoComplete="current-password"
-                                name="password"
-                            />
-                            <button className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 my-3 font-bold">
-                                Login
-                            </button>
-                            <div className="mt-2 text-xs">
-                                Don't have an account?{" "}
-                                <Link
-                                    className="hover:text-red-600 active:text-red-600"
-                                    to="/register"
-                                >
-                                    Register
-                                </Link>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
     )
