@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,72 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-header{
+  background-color: #FF9700;
+}
+
+.boxRightLogin{
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  justify-content: center;
+}
+
+.boxLeftLogin{
+  max-width: 50%;
+  color:#FF9700;
+}
+
+.formLogin{
+  display:flex;
+  width:100%;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.boxInput{
+  padding: 0.75rem;
+  background-color: #FFFFFF;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-width: 1px;
+  border-color:#FF9700 ;
+  color:#000000
+}
+
+.containerForm{
+  width: 40%;
+  background-color: rgba(255, 151, 0, 0.75);
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  color:#FFFFFF
+}
+
+.logoNav{
+  height: 70px;
+  width: 70px;
+}
+
+.boxTextLeft{
+  height: 40%;
+  width: 100%;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border: 4px solid #C2410C;
+  padding: 35px;
+  background-color: rgb(255 151 0 / 51%);
+  color:#FFFFFF;
+}
+
