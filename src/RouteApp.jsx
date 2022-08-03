@@ -11,6 +11,7 @@ import Vegetarian from './containers/home/Vegetarian';
 import './App.css';
 import App from "./App";
 import Detail from "./containers/Detail";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function RouteApp() {
   return (
@@ -23,14 +24,26 @@ function RouteApp() {
           <Route path="/daily-menu" element={<DailyMenu />} />
           <Route path="/dessert" element={<Dessert />} />
           <Route path="/vegetarian" element={<Vegetarian />} />
-          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/detail/:id" element={
+            <ProtectedRoute loginOnly={true}> <Detail /></ProtectedRoute>
+
+          } />
         </Route>
         <Route
           path="/login"
-          element={<Login />} />
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/register"
-          element={<Register />} />
+          element={
+            <ProtectedRoute loginOnly={false}>
+              <Register />
+            </ProtectedRoute>
+          } />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
