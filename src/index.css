@@ -93,3 +93,17 @@ code {
   background-color: rgb(0 0 0 / 26%);
 }
 
+.w-custom{
+  width: 95.666667%;
+}
+
+.text-category{
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  margin: -35px 0 0 -35px;
+  border-radius: 20px;
+}
+

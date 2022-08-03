@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import MenuList from "./MenuList";
 
 const Dessert = () => {
     return (
         <div>
-            ini halaman dessert
+            <MenuList url="dessert" />
         </div>
     )
 }

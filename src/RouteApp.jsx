@@ -9,6 +9,8 @@ import Dessert from './containers/home/Dessert';
 import MenuList from './containers/home/MenuList';
 import Vegetarian from './containers/home/Vegetarian';
 import './App.css';
+import App from "./App";
+import Detail from "./containers/Detail";
 
 function RouteApp() {
   return (
@@ -16,11 +18,12 @@ function RouteApp() {
       <Routes>
         <Route
           path="/"
-          element={<Home />}>
-          <Route path="/" element={<MenuList />} />
+          element={<App />}>
+          <Route path="/" element={<Home />} />
           <Route path="/daily-menu" element={<DailyMenu />} />
           <Route path="/dessert" element={<Dessert />} />
           <Route path="/vegetarian" element={<Vegetarian />} />
+          <Route path="/detail/:id" element={<Detail />} />
         </Route>
         <Route
           path="/login"
