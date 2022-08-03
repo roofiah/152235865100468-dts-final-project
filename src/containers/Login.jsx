@@ -9,17 +9,17 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const handleSubmit = async (event) => {
-        // event.preventDefault();
-        // const data = new FormData(event.currentTarget);
-        // const email = data.get("email")
-        // const password = data.get("password")
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        const email = data.get("email")
+        const password = data.get("password")
 
-        // try {
-        //     await signInWithEmailAndPassword(auth, email, password);
-        navigate("/")
-        // } catch (error) {
-        //     setErrorMessage(error.message)
-        // }
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate("/")
+        } catch (error) {
+            setErrorMessage(error.message)
+        }
     };
     return (
         <div className="w-full h-screen">
@@ -28,7 +28,6 @@ const Login = () => {
                 src="https://source.unsplash.com/random/1920x1080/?food,recipe,vegetable,rice"
                 alt="/"
             />
-
             <div className="fixed w-full z-50 px-4 py-24 tr-color">
                 <div className="flex flex-row">
                     <div className="boxLeftLogin justify-center">

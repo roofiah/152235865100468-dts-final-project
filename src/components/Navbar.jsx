@@ -4,8 +4,11 @@ import { Badge } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import logo from '../assets/images/logo.png';
 import ImgUser from '../assets/images/user.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../config/firebase';
 
 const Navbar = () => {
+    const [userLogin] = useAuthState(auth)
     return (
         <nav className='bg-header text-white'>
             <div className='flex items-center font-medium justify-arround'>
@@ -36,6 +39,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='flex flex-row p-4 mr-5'>
+                        {userLogin && <div>{userLogin.email}</div>}
+
                         <Badge badgeContent={2} color="error">
                             <NotificationsIcon />
                         </Badge>

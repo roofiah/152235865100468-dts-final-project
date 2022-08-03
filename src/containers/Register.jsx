@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import logo from '../assets/images/logo.png';
 
@@ -9,17 +9,17 @@ const Register = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const handleSubmit = async (event) => {
-        // event.preventDefault();
-        // const data = new FormData(event.currentTarget);
-        // const email = data.get("email")
-        // const password = data.get("password")
-
-        // try {
-        //     await signInWithEmailAndPassword(auth, email, password);
-        navigate("/")
-        // } catch (error) {
-        //     setErrorMessage(error.message)
-        // }
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        const email = data.get('email')
+        const password = data.get('password')
+        try {
+            const { user } = await createUserWithEmailAndPassword(auth, email, password)
+            console.log(user)
+            navigate("/")
+        } catch (error) {
+            setErrorMessage(error.message);
+        }
     };
     return (
         <div className="w-full h-screen">
