@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='pb-5 text-xm pl-10 text-center'>
-                {new Date().getFullYear()} © DTS Final Project - Rofiatul Adawiyah.
+                {new Date().getFullYear()} © DTS Final Project - Rofiatul Adawiyah (152235865100-468).
             </div>
         </div>
     )

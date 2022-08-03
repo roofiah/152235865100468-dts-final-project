@@ -32,8 +32,8 @@ const Register = () => {
                 <div className="boxLeftLogin justify-center">
                     <img src={logo} alt="logo" className='md:ml-8 md:cursor-pointer h-64' />
                     <div className="boxTextLeft">
-                        <h3>Bingung Mau masak Apa?</h3>
-                        <h4>Disini kalian bisa dengan mudah mencari resep menu favorit keluarga ~_~</h4>
+                        <h3>WELCOME to MENUKU</h3>
+                        <h4>Got just the ingredients and instructions for any recipe. just enjoy cooking. Browse through over 1.000.000 tasty recipe ~_~</h4>
                     </div>
                 </div>
                 <div className="containerForm">

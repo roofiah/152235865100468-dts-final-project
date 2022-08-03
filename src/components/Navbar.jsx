@@ -2,22 +2,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import ImgUser from '../assets/images/user.png';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../config/firebase';
-import { signOut } from "firebase/auth";
-import { useNavigate, NavLink } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const navigate = useNavigate()
     const [userLogin] = useAuthState(auth)
-
     const [profileDropDown, setProfileDropdown] = useState(false);
 
     const setDropDown = () => {
         setProfileDropdown((prev) => !prev);
     };
+
     const onLogout = () => {
         signOut(auth).then(() => {
             navigate("/login")
@@ -25,6 +26,7 @@ const Navbar = () => {
             console.log(error)
         });
     }
+
     return (
         <nav className='bg-header text-white'>
             <div className='flex items-center font-medium justify-arround'>
@@ -55,8 +57,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='flex flex-row p-4 mr-5'>
+                        <SearchBar color="white" />
                         {userLogin && <div>{userLogin.email}</div>}
-
                         <Badge badgeContent={2} color="error">
                             <NotificationsIcon />
                         </Badge>
@@ -84,7 +86,6 @@ const Navbar = () => {
 
                     {profileDropDown && (
                         <section className="absolute mt-20 right-0 text-black">
-
                             <div className="flex flex-col gap-y-2 w-[130px] h-auto bg-white rounded-sm p-4">
                                 <button onClick={onLogout} className="flex">
                                     <svg
