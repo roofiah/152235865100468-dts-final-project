@@ -37,7 +37,7 @@ const Banner = () => {
                                 <h1 className='white-space-normal font-bold flex'>
                                     {item ? item.strMeal : "-"}
                                 </h1>
-                                <p className='mt-3 white-space-normal text-xs flex whitespace-pre-wrap'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <p className='mt-3 white-space-normal text-xs flex whitespace-pre-wrap line-clamp-3'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                             </div>
                         </Link>
                     </div>
