@@ -38,7 +38,7 @@ const Banner = () => {
             />
             <div id="slider" className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
                 {menus.map((item, index) => (
-                    <div className='w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] inline-block cursor-pointer relative p-2' key={index}>
+                    <div className='w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] inline-block cursor-pointer relative py-2 px-1' key={index}>
                         <Link
                             to={`/detail/${item?.idMeal}`}
                         >

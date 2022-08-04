@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import MenuCard from '../../components/MenuCard';
 import apiUrl from '../../apis/apiUrl';
 
@@ -11,6 +10,7 @@ const MenuList = ({ url }) => {
             try {
                 const fetchedMenus = await apiUrl.get("filter.php?c=" + url);
                 setMenus(fetchedMenus.data.meals);
+                console.log("ini data detail category" + JSON.stringify(fetchedMenus.data))
             } catch (error) {
                 console.log(error);
             }

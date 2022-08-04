@@ -1,5 +1,4 @@
 
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
@@ -26,7 +25,7 @@ const ListCategory = ({ id, title, url }) => {
     }
 
     const slideRight = () => {
-        var slider = document.getElementById('slider' + id);
+        const slider = document.getElementById('slider' + id);
         slider.scrollLeft = slider.scrollLeft + 500;
     };
 

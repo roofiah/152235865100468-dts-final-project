@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import MenuList from "./MenuList";
-import { Outlet } from "react-router-dom";
 import Banner from "../../components/Banner";
 import Categories from "../../components/Categories";
 

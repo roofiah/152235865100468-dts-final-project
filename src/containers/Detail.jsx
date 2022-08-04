@@ -20,13 +20,10 @@ const Detail = () => {
         fetchDetail();
     }, [id]);
 
-    // console.log('ini idnya' + detail && detail.idMeal ? detail.idMeal : "kosong")
-    console.log("ini data detailnya" + JSON.stringify(detail))
     return (
         <div>
             {detail && detail[0] ?
                 <div className="flex flex-col w-full h-auto gap-y-8">
-                    {/* <img className="rounded-t-lg" src={detail[0].strMealThumb} alt="" /> */}
                     <div className="relative flex w-full h-[510px] ">
                         <img
                             src={detail[0].strMealThumb}

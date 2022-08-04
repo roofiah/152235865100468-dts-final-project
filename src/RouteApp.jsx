@@ -12,6 +12,7 @@ import App from "./App";
 import Detail from "./containers/Detail";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Searched from "./containers/Searched";
+import CategoryDetail from "./containers/home/CategoryDetail";
 
 function RouteApp() {
   return (
@@ -28,6 +29,11 @@ function RouteApp() {
           <Route path="/detail/:id" element={
             <ProtectedRoute loginOnly={true}>
               <Detail />
+            </ProtectedRoute>
+          } />
+          <Route path="/detail-category/:value" element={
+            <ProtectedRoute loginOnly={true}>
+              <CategoryDetail />
             </ProtectedRoute>
           } />
           <Route path="/search/:value" element={<Searched />} />
