@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-// import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import apiUrl from '../apis/apiUrl';
 
@@ -19,12 +18,12 @@ const Categories = () => {
         }
         fetchMenus();
     }, []);
-    console.log("ini isi banner" + JSON.stringify(menus))
 
     return (
         <div className='mx-16'>
             <h1 className='mb-2 mt-4 text-2xl font-bold'>Category</h1>
             <div className='relative flex items-center group'>
+
                 <div className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
                     {menus.map((item, index) => (
                         <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2' key={index}>

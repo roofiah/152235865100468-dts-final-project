@@ -39,9 +39,7 @@ const SearchBar = (props) => {
                 </svg>
                 <input
                     type="text"
-                    className="flex py-1.5 w-full outline-none bg-transparent text-black md:text-white"
-
-
+                    className="flex py-1.5 w-full outline-none bg-transparent text-black md:text-black"
                     onChange={(e) => handleChange(e)} onKeyPress={(e) => handleKey(e)}
                 />
             </div>

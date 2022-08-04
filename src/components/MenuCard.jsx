@@ -8,8 +8,8 @@ const MenuCard = ({ menu }) => {
             <Link to={`/detail/${menu.idMeal}`}>
                 <img className="rounded-t-lg" src={menu.strMealThumb} alt="" />
                 <div className="p-5">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-white">{menu.strMeal}</h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. "</p>
+                    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-800 dark:text-white text-center">{menu.strMeal}</h5>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. "</p>
                     <div className='flex flex-row'>
                         <Rating sx={{
                             "& .MuiRating-iconFilled": {

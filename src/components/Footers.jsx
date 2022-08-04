@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='w-full aligns-item justify-between text-gray-300 bg-black'>
+        <div className='footer-container w-full aligns-item justify-between text-gray-300 bg-black'>
             <div className="inline-flex w-full mb-2 px-24 py-5 justify-between text-[#808080]">
                 <div className="flex flex-col gap-y-1">
                     <p>Menuku Premium</p>

@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const App = () => {
     return (
-        <div>
+        <div className="flex-wrapper">
             <NavHeader />
             <NavContent />
             <Outlet />

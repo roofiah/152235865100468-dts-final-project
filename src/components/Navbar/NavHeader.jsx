@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Badge } from '@mui/material';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
@@ -38,34 +35,8 @@ const NavHeader = () => {
                     <div className='flex flex-row w-6/12'>
                         <img src={logo} alt="logo" className='md:ml-8 md:cursor-pointer logoNav' />
                         <SearchBar color="#FF9700" />
-                        {/* <ul className="md:flex hidden uppercase items-center gap-8 text-sm ml-4 p-4">
-                        <li>
-                            <Link to="/" className='px-3 inline-block hover:text-gray-600'>
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/daily-menu" className='px-3 inline-block hover:text-gray-600'>
-                                Daily Menu
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/dessert" className='px-3 inline-block hover:text-gray-600'>
-                                Dessert
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/vegetarian" className='px-3 inline-block hover:text-gray-600'>
-                                Vegetarian
-                            </Link>
-                        </li>
-                    </ul> */}
                     </div>
                     <div className='flex flex-row p-4 mr-5'>
-                        {/* <SearchBar color="white" /> */}
-                        {/* <Badge badgeContent={2} color="error">
-                            <NotificationsIcon />
-                        </Badge> */}
                         {userLogin && <div className='text-center mt-1'>{userLogin.email}</div>}
                         <img class="w-10 h-10 rounded-full ml-3" src={ImgUser} alt="Rounded avatar" />
                         <button onClick={setDropDown} className="ml-3">
@@ -88,7 +59,6 @@ const NavHeader = () => {
                             </svg>
                         </button>
                     </div>
-
                     {buttonDropDown && (
                         <section className="absolute mt-20 right-0 text-black">
                             {userLogin ?
