@@ -33,7 +33,7 @@ const NavHeader = () => {
             <div className='flex items-center font-medium justify-arround'>
                 <div className="z-50 w-full flex justify-between">
                     <div className='flex flex-row sm:w-6/12 w-full'>
-                        <img src={logo} alt="logo" className='md:ml-8 md:cursor-pointer logoNav' />
+                        <img src={logo} alt="logo" className='md:ml-8 ml-2 md:cursor-pointer logoNav' />
                         <SearchBar color="#FF9700" />
                     </div>
                     <div className='flex flex-row p-4 sm:mr-5 mr-10'>
