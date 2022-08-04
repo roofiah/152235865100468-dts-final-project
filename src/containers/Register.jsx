@@ -3,21 +3,28 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import logo from '../assets/images/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
     const navigate = useNavigate();
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const email = data.get('email')
-        const password = data.get('password')
+        const email = data.get('email');
+        const password = data.get('password');
+
         try {
+            setErrorMessage('')
+            setIsLoading(true)
             const { user } = await createUserWithEmailAndPassword(auth, email, password)
             console.log(user)
             navigate("/")
         } catch (error) {
+            setIsLoading(false)
             setErrorMessage(error.message);
         }
     };
@@ -56,8 +63,10 @@ const Register = () => {
                                 autoComplete="current-password"
                                 name="password"
                             />
+                            <p className="text-red-800">{errorMessage}</p>
                             <button className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 my-3 font-bold">
                                 Register
+                                {isLoading ? <FontAwesomeIcon className='spinner ml-3' icon={faSpinner} /> : null}
                             </button>
                             <div className="mt-2 text-xs">
                                 Already have an account?{" "}

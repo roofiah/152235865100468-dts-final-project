@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth, signInWithGoogle } from "../config/firebase";
 import logo from '../assets/images/logo.png';
+import iconGoogle from '../assets/images/google.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
     const navigate = useNavigate();
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -15,9 +19,12 @@ const Login = () => {
         const password = data.get("password")
 
         try {
+            setErrorMessage('')
+            setIsLoading(true)
             await signInWithEmailAndPassword(auth, email, password);
             navigate("/")
         } catch (error) {
+            setIsLoading(false)
             setErrorMessage(error.message)
         }
     };
@@ -57,19 +64,29 @@ const Login = () => {
                                     autoComplete="current-password"
                                     name="password"
                                 />
-                                <button className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 my-3 font-bold">
+                                <p className="text-red-800">{errorMessage}</p>
+                                <button className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 mt-3 font-bold">
                                     Login
+                                    {isLoading ? <FontAwesomeIcon className='spinner ml-3' icon={faSpinner} /> : null}
                                 </button>
-                                <div className="mt-2 text-xs">
-                                    Don't have an account?{" "}
-                                    <Link
-                                        className="hover:text-red-600 active:text-red-600"
-                                        to="/register"
-                                    >
-                                        Register
-                                    </Link>
-                                </div>
                             </form>
+                            <button onClick={signInWithGoogle} className="bg-orange-700 hover:bg-orange-800 active:bg-red-700 py-3 mt-4 font-bold text-white flex flex-row w-full justify-center">
+                                <img
+                                    className="w-7 h-7 mr-3"
+                                    src={iconGoogle}
+                                    alt="/"
+                                />
+                                Login with Google
+                            </button>
+                            <div className="mt-2 text-xs">
+                                Don't have an account?{" "}
+                                <Link
+                                    className="hover:text-red-600 active:text-red-600"
+                                    to="/register"
+                                >
+                                    Register
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

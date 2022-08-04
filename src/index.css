@@ -48,7 +48,7 @@ code {
   width:100%;
   flex-direction: column;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 
 .boxInput{
@@ -167,5 +167,19 @@ code {
 
 .footer-container{
   margin-top: auto;
+}
+
+.spinner {
+  animation: spin infinite 5s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
