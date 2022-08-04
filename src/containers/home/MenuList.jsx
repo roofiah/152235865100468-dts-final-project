@@ -28,7 +28,7 @@ const MenuList = ({ url }) => {
                     Please Wait...
                 </div>
                 :
-                <div className='grid grid-cols-5 gap-5 mx-4 p-11'>
+                <div className='grid sm:grid-cols-5 grid-cols-2 sm:gap-5 gap-3 sm:mx-4 mx-2 sm:p-11 p-3'>
                     {
                         menus.map(menu => (
                             <MenuCard key={menu.idMeal} menu={menu} />

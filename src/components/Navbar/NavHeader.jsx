@@ -32,13 +32,13 @@ const NavHeader = () => {
         <nav className='bg-header text-white'>
             <div className='flex items-center font-medium justify-arround'>
                 <div className="z-50 w-full flex justify-between">
-                    <div className='flex flex-row w-6/12'>
+                    <div className='flex flex-row sm:w-6/12 w-full'>
                         <img src={logo} alt="logo" className='md:ml-8 md:cursor-pointer logoNav' />
                         <SearchBar color="#FF9700" />
                     </div>
-                    <div className='flex flex-row p-4 mr-5'>
-                        {userLogin && <div className='text-center mt-1'>{userLogin.email}</div>}
-                        <img class="w-10 h-10 rounded-full ml-3" src={ImgUser} alt="Rounded avatar" />
+                    <div className='flex flex-row p-4 sm:mr-5 mr-10'>
+                        {userLogin && <div className='text-center mt-1 userLogin'>{userLogin.email}</div>}
+                        <img class="w-10 h-10 rounded-full sm:ml-3 ml-0" src={ImgUser} alt="Rounded avatar" />
                         <button onClick={setDropDown} className="ml-3">
                             <svg
                                 className={

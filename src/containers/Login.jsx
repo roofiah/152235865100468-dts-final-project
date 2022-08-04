@@ -31,14 +31,14 @@ const Login = () => {
     return (
         <div className="w-full h-screen">
             <img
-                className="hidden sm:block absolute w-full h-screen object-cover"
+                className="sm:block absolute w-full h-screen object-cover"
                 src="https://source.unsplash.com/random/1920x1080/?food,recipe,vegetable,rice"
                 alt="/"
             />
             <div className="fixed w-full z-50 px-4 py-24 tr-color">
-                <div className="flex flex-row">
+                <div className="flex sm:flex-row flex-col">
                     <div className="boxLeftLogin justify-center">
-                        <img src={logo} alt="logo" className='imgLogin md:cursor-pointer h-64' />
+                        <img src={logo} alt="logo" className='imgLogin md:cursor-pointer sm:h-64 h-32' />
                         <div className="boxTextLeft">
                             <h3>WELCOME to MENUKU</h3>
                             <h4>Got just the ingredients and instructions for any recipe. just enjoy cooking. Browse through over 1.000.000 tasty recipe ~_~</h4>

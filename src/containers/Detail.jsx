@@ -23,7 +23,7 @@ const Detail = () => {
         <div className="h-full">
             {detail && detail[0] ?
                 <div className="flex flex-col w-full h-auto gap-y-8">
-                    <div className="flex w-full h-[510px] ">
+                    <div className="flex w-full h-[510px] sm:flex-row flex-col ">
                         <img
                             src={detail[0].strMealThumb}
                             alt=""
@@ -42,8 +42,8 @@ const Detail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row">
-                        <div className="ml-10 w-1/4">
+                    <div className="flex sm:flex-row flex-col">
+                        <div className="ml-10 sm:w-1/4 w-full">
                             <h2 className="font-bold">Ingredients: </h2>
                             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((number) => {
                                 if (detail[0]["strIngredient" + number]) {
@@ -62,7 +62,7 @@ const Detail = () => {
                                 return null;
                             })}
                         </div>
-                        <div className="w-3/4 h-auto px-11">
+                        <div className="w-3/4 h-auto px-11 sm:mt-0 mt-3">
                             <h2 className="mb-1 font-bold">Instructions :</h2>
                             <p>{detail[0]?.strInstructions?.replace(/tbsp./g, "tbsp").split(". ")?.map((item, index) => <p>{index + 1}. {item}.<br /></p>)}</p>
                         </div>

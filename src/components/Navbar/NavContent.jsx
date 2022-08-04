@@ -7,7 +7,7 @@ const NavContent = () => {
         <nav>
             <div className='justify-between flex flex-row'>
                 <div>
-                    <ul className="md:flex hidden uppercase items-center gap-8 text-sm ml-4 p-4">
+                    <ul className="md:flex uppercase items-center gap-8 text-sm ml-4 p-4">
                         <li>
                             <NavLink to="/" className={({ isActive }) => isActive ? 'nav-active' : 'nav-inactive'}>
                                 <div className='px-3 inline-block hover:text-gray-600 flex flex-row'>
@@ -42,7 +42,7 @@ const NavContent = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='flex flex-row mr-9 items-center'>
+                <div className='flex flex-row mr-9 items-center iconSocials'>
                     <div className='mr-2'><a href="#" class="fa fa-google"></a></div>
                     <div className='mr-2'><a href="#" class="fa fa-instagram"></a></div>
                     <div className='mr-2'><a href="#" class="fa fa-facebook"></a></div>

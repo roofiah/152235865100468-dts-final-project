@@ -33,7 +33,7 @@ const Searched = () => {
                 <div className='p-4 md:ml-7 text-black'>
                     <h2 className='mb-2 mt-4 font-bold'>Search for {value} </h2>
                     {data !== null && data.length > 0 ? (
-                        <div className='grid grid-cols-6 gap-5 mx-4'>
+                        <div className='grid sm:grid-cols-6 grid-cols-2 gap-5 mx-4'>
                             {
                                 data.map(menu => (
                                     <MenuCard key={menu.idMeal} menu={menu} />
