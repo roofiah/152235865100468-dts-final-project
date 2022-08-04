@@ -4,27 +4,38 @@ import apiUrl from '../../apis/apiUrl';
 
 const MenuList = ({ url }) => {
     const [menus, setMenus] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
+
+    const fetchMenus = async () => {
+        setIsLoading(true)
+        try {
+            const fetchedMenus = await apiUrl.get("filter.php?c=" + url);
+            setMenus(fetchedMenus.data.meals);
+        } catch (error) {
+            console.log(error);
+        }
+        setIsLoading(false)
+    }
 
     useEffect(() => {
-        const fetchMenus = async () => {
-            try {
-                const fetchedMenus = await apiUrl.get("filter.php?c=" + url);
-                setMenus(fetchedMenus.data.meals);
-                console.log("ini data detail category" + JSON.stringify(fetchedMenus.data))
-            } catch (error) {
-                console.log(error);
-            }
-        }
         fetchMenus();
     }, []);
+
     return (
-        <div className='grid grid-cols-5 gap-5 mx-4 p-11'>
-            {
-                menus.map(menu => (
-                    <MenuCard key={menu.idMeal} menu={menu} />
-                ))
-            }
-        </div>
+        <>
+            {isLoading ?
+                <div className='mt-4 w-full h-full text-center'>
+                    Please Wait...
+                </div>
+                :
+                <div className='grid grid-cols-5 gap-5 mx-4 p-11'>
+                    {
+                        menus.map(menu => (
+                            <MenuCard key={menu.idMeal} menu={menu} />
+                        ))
+                    }
+                </div>
+            }</>
     );
 }
 
