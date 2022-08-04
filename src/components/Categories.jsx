@@ -22,8 +22,8 @@ const Categories = () => {
     console.log("ini isi banner" + JSON.stringify(menus))
 
     return (
-        <div className='mx-10'>
-            <h1>Category</h1>
+        <div className='mx-16'>
+            <h1 className='mb-2 mt-4 text-2xl font-bold'>Category</h1>
             <div className='relative flex items-center group'>
                 <div className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
                     {menus.map((item, index) => (

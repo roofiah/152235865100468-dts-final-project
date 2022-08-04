@@ -26,7 +26,7 @@ const Banner = () => {
                 {menus.map((item, index) => (
                     <div className='w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] inline-block cursor-pointer relative p-2' key={index}>
                         <Link
-                            to={`/dessert`}
+                            to={`/detail/${item?.idMeal}`}
                         >
                             <img
                                 className='w-full h-auto block'

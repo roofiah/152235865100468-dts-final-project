@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../../components/Footers";
-import Navbar from "../../components/Navbar";
 import MenuList from "./MenuList";
 import { Outlet } from "react-router-dom";
 import Banner from "../../components/Banner";
@@ -13,7 +11,6 @@ const Home = () => {
             <Categories />
             <MenuList url="seafood" />
         </div>
-
     )
 }
 

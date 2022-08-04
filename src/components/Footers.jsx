@@ -7,27 +7,23 @@ const Footer = () => {
                 <div className="flex flex-col gap-y-1">
                     <p>Menuku Premium</p>
                     <p>Contact Us</p>
-
                 </div>
                 <div className="hidden md:block">
                     <div className="flex flex-col gap-y-1">
                         <p>Blog</p>
                         <p>Investor Relations</p>
-                        <p>Legal Provisions</p>
                     </div>
                 </div>
                 <div className="hidden md:block">
                     <div className="flex flex-col gap-y-1">
                         <p>Help center</p>
                         <p>Jobs</p>
-                        <p>Cookie Prefrences</p>
                     </div>
                 </div>
                 <div className="hidden md:block">
                     <div className="flex flex-col gap-y-1">
                         <p>About</p>
                         <p>Terms of Use</p>
-                        <p>Corporate Information</p>
                     </div>
                 </div>
             </div>
