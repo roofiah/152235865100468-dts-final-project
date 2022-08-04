@@ -63,7 +63,7 @@ const ListCategory = ({ id, title, url }) => {
                                             <h1 className='white-space-normal font-bold flex'>
                                                 {item ? item.strMeal : "-"}
                                             </h1>
-                                            <p className='mt-3 white-space-normal text-xs flex whitespace-pre-wrap'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                            <p className='mt-3 white-space-normal text-xs flex whitespace-pre-wrap line-clamp-2'>Read More about {item.strMeal} to find out how to cook this dish with a very easy recipe</p>
                                         </div>
                                     </Link>
                                 </div>
